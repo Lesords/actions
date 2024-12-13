@@ -3,6 +3,7 @@
 status=0
 ignoreFile=ignore.list
 logFile=build.log
+issueFile=issue.log
 resultFile=compile.failed
 fqbnList=(
     "Seeeduino:samd:seeed_XIAO_m0"
@@ -81,6 +82,7 @@ function main() {
                 status=1
                 echo -e "\e[31mBuild $example on $fqbn failed\e[0m\n "
                 echo -e "\e[31mBuild $example on $fqbn failed\e[0m" >> $logFile
+                echo "- Build $example on $fqbn failed" >> $issueFile
             fi
         done
     done

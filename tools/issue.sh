@@ -1,7 +1,10 @@
 #!/bin/bash
 
 resultFile=compile.failed
+issueFile=issue.log
 bodyText="Automatic compilation failed
+
+$(cat $issueFile)
 
 You can view the details through the following link
 
