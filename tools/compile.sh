@@ -75,8 +75,8 @@ function main() {
             buildSketch $fqbn examples/$example
 
             if [ $? -eq 0 ]; then
-                echo -e "\e[31mBuild $example on $fqbn successful\e[0m\n "
-                echo -e "\e[31mBuild $example on $fqbn successful\e[0m" >> $logFile
+                echo -e "\e[32mBuild $example on $fqbn successful\e[0m\n "
+                echo -e "\e[32mBuild $example on $fqbn successful\e[0m" >> $logFile
             else
                 status=1
                 echo -e "\e[31mBuild $example on $fqbn failed\e[0m\n "
