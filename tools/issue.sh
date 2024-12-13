@@ -21,6 +21,8 @@ if [ -f $resultFile ]; then
     else
         gh issue create --title "ci: build failed" --body "$bodyText"
     fi
+
+    exit 1
 else
     echo "Compilation successful"
 fi
