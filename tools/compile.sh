@@ -17,9 +17,14 @@ fqbnList=(
     "esp32:esp32:XIAO_ESP32C6"
     "esp32:esp32:XIAO_ESP32S3"
 )
-exampleList=$(ls examples)
+exampleList=$(find examples/ -name "*ino"  | xargs dirname | sort | awk '{gsub("examples/", ""); print}')
 
 function installDependLib() {
+    if [ ! -f $dependFile ]; then
+        echo "No library dependencies required"
+        return
+    fi
+
     cat $dependFile | while read repo
     do
         repo_name=$(echo $repo | cut -d '/' -f 2)
